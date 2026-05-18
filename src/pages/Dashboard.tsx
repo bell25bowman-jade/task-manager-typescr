@@ -8,7 +8,8 @@ const Dashboard = () => {
   return (
     <div>
       <h1>Task Dashboard</h1>
-
+      <Link to="/profile">Profile</Link>
+      <Link to="/tasks">All Tasks</Link>
       <Link to="/create">Create Task</Link>
 
       {tasks.map((task) => (
