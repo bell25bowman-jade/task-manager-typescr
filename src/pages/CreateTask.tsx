@@ -28,22 +28,30 @@ const CreateTask = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Create Task</h1>
+      <h2>Create Task</h2>
+      {error && <p className="error">{error}</p>}
 
-      {error && <p>{error}</p>}
+      <div>
+        <label htmlFor="task-title">Task Title</label>
+        <input
+          id="task-title"
+          type="text"
+          placeholder="Task Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          required
+        />
+      </div>
 
-      <input
-        type="text"
-        placeholder="Task Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-
-      <textarea
-        placeholder="Task Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
+      <div>
+        <label htmlFor="task-description">Task Description</label>
+        <textarea
+          id="task-description"
+          placeholder="Task Description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        />
+      </div>
 
       <button type="submit">Create</button>
     </form>
