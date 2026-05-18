@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 import type { Task } from "../types/task";
 
 export interface TaskContextType {
@@ -11,3 +11,11 @@ export interface TaskContextType {
 export const TaskContext = createContext<TaskContextType | undefined>(
   undefined,
 );
+
+export function useTaskContext() {
+  const context = useContext(TaskContext);
+  if (context === undefined) {
+    throw new Error("useTaskContext must be used inside TaskProvider");
+  }
+  return context;
+}
