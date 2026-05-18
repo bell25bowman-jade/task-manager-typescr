@@ -15,6 +15,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/tasks/:id" element={<TaskDetails />} />
         <Route
           path="/"
           element={
@@ -40,7 +41,7 @@ function App() {
           }
         />
         <Route
-          path="/task/:id"
+          path="/tasks/:id"
           element={
             <ProtectedRoute>
               <TaskDetails />
