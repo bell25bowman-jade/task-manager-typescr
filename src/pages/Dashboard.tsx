@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useTasks } from "../context/useTasks";
+import useTasks from "../context/useTasks";
 import TaskCard from "../components/TaskCard";
 
 const Dashboard = () => {

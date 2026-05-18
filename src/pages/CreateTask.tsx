@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
-import { useTasks } from "../context/useTasks";
+import useTasks from "../context/useTasks";
 
 const CreateTask = () => {
   const { addTask } = useTasks();
