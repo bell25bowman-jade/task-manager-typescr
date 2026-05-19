@@ -1,3 +1,33 @@
+I set the NavBar cup with conditional renders based on if your logged in. ifAuthenticated it shows all the links to dashboard,, create task, profile, login page, and a log out button.
+
+ProtectedRoute checks with Auth0 for authenticated users and redirecting the unautherized users.
+
+TaskCard recieves props and objects for when a task needs deleting, it also returns header, description, the status, and gives the link to the details to edit or delete the task.
+
+TaskForm this renders the task, decides when the form should reset. The inner components holds values. Submitting checks for an empty title.
+
+TaskContext keeps track of all the tasks in state and give the child components a way to add, remove, or edit without having to prop drill.
+
+TaskContextValues describes the shape of the data the context will hold, later it provides a real value.
+
+UseTask this hooks is need if the provider is missing it throws an error.
+
+CreateTask a simple task form using useState to manage form inputs and a custom useTask hook to add a new task.
+
+Dashboard give an array of profile, all task, create task, and a title. Each item in the array has link
+
+EditTask the components uses route id to look up the task to update the title and/or description and returns the value to the target.
+
+Login this is the page that directs you to Auth0 to login or sign up.
+
+Profile this checks to see if user is authenticated, if they are it showsthe users picture, name, and email.
+
+TaskDetails validates the task ID if not found it gives an error. If the task is validated it displays the title, description, and status.
+
+/services/auth.tsx defines an Auth0 user shape for the app. the name, email, and picture are optional.
+
+/types/task.tsx this is the blueprint that says each task must have these pieces of information.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
